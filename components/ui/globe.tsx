@@ -2,14 +2,14 @@
 import { useEffect, useRef, useState } from "react";
 import { Color, Scene, Fog, PerspectiveCamera, Vector3 } from "three";
 import ThreeGlobe from "three-globe";
-import { useThree, Object3DNode, Canvas, extend } from "@react-three/fiber";
+import { useThree, Canvas, extend } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import countries from "../../../Projects/TuniRiser/public/dev/globe.json";
 import * as THREE from 'three';
 declare module "@react-three/fiber" {
-  interface ThreeElements {
-    threeGlobe: Object3DNode<ThreeGlobe, typeof ThreeGlobe>;
-  }
+  // interface ThreeElements {
+  //   threeGlobe: Object3DNode<ThreeGlobe, typeof ThreeGlobe>;
+  // }
 }
 const markers = [
   { lat: 37.7749, lng: -122.4194, color: "#ff0000", size: 2 }, // Example for San Francisco
@@ -249,7 +249,7 @@ export function Globe({ globeConfig, data }: WorldProps) {
 
   return (
     <>
-      <threeGlobe ref={globeRef} />
+      {/* <threeGlobe ref={globeRef} /> */}
     </>
   );
 }
